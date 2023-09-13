@@ -7,7 +7,7 @@ trigger:
     subscriptionId: '66d9c3b1-70eb-49c9-8677-267c0e374b18'
     action: 'Create Or Update Resource Group'
     location: 'Central India'
-    templateLocation: 'URL of the file'
+    templateLocation: 'https://raw.githubusercontent.com/suchi271/ARMPipeline/main/create_storage_account/azuredeploy.json'
     csmFileLink: 'https://raw.githubusercontent.com/suchi271/ARMPipeline/main/create_storage_account/azuredeploy.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/suchi271/ARMPipeline/main/create_storage_account/azuredeploy.parameters.json'
     deploymentMode: 'Incremental'
