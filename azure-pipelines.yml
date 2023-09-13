@@ -12,17 +12,3 @@ steps:
     ScriptPath: './Deploy-AzTemplate.ps1'
     ScriptArguments: -Location 'centralindia' -ResourceGroupName 'ResourceDeployment' -TemplateFile create_storage_account\Deploy-AzTemplate.ps1
     azurePowerShellVersion: 'LatestVersion'
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'ARMStorageAccountPipeline'
-    subscriptionId: '66d9c3b1-70eb-49c9-8677-267c0e374b18'
-    action: 'Create Or Update Resource Group'
-    location: 'Central India'
-    templateLocation: 'https://raw.githubusercontent.com/suchi271/ARMPipeline/main/create_storage_account/azuredeploy.json'
-    csmFileLink: 'https://raw.githubusercontent.com/suchi271/ARMPipeline/main/create_storage_account/azuredeploy.json'
-    csmParametersFileLink: 'https://raw.githubusercontent.com/suchi271/ARMPipeline/main/create_storage_account/azuredeploy.parameters.json'
-    deploymentMode: 'Incremental'
-    deploymentName: 'DeployPipelineTemplate'
-    deploymentOutputs: 'OutputsFromDeployment'
-    overrideParameters: -Location 'centralindia' -ResourceGroupName 'ResourceDeployment' -TemplateFile create_storage_account\azuredeploy.json
