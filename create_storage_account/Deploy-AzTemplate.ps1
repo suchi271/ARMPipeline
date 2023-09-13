@@ -1,3 +1,5 @@
+Connect-AzAccount
+
 # Define variables
 $resourceGroupName = "ResourceDeployment"
 $storageAccountName = "azureStorageAccount"
@@ -6,8 +8,8 @@ $storageAccountSku = "Standard_LRS"
 
 # Deploy the Azure Storage Account using ARM template and parameters
 New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
-    -TemplateFile .\armdeploy.json `
-    -TemplateParameterFile .\parameters.json `
+    -TemplateFile .\azuredeploy.json `
+    -TemplateParameterFile .\azuredeploy.parameters.json `
     -storageAccountName $storageAccountName `
     -location $location `
     -storageAccountSku $storageAccountSku
