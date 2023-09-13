@@ -1,5 +1,17 @@
 trigger:
 - none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'ARMStorageAccountPipeline'
+    ScriptType: 'create_storage_account\Deploy-AzTemplate.ps1'
+    ScriptPath: './Deploy-AzTemplate.ps1'
+    ScriptArguments: -Location 'centralindia' -ResourceGroupName 'ResourceDeployment' -TemplateFile create_storage_account\Deploy-AzTemplate.ps1
+    azurePowerShellVersion: 'LatestVersion'
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -14,15 +26,3 @@ trigger:
     deploymentName: 'DeployPipelineTemplate'
     deploymentOutputs: 'OutputsFromDeployment'
     overrideParameters: -Location 'centralindia' -ResourceGroupName 'ResourceDeployment' -TemplateFile create_storage_account\azuredeploy.json
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- task: AzurePowerShell@5
-  inputs:
-    azureSubscription: 'ARMStorageAccountPipeline'
-    ScriptType: 'create_storage_account\Deploy-AzTemplate.ps1'
-    ScriptPath: './Deploy-AzTemplate.ps1'
-    ScriptArguments: -Location 'centralindia' -ResourceGroupName 'ResourceDeployment' -TemplateFile create_storage_account\Deploy-AzTemplate.ps1
-    azurePowerShellVersion: 'LatestVersion'
