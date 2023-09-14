@@ -5,7 +5,7 @@ $resourceGroupName = "ResourceDeployment"
 $storageAccountName = "suchistorageaccount"
 
 # Deploy the Azure Storage Account using ARM template and parameters
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile "C:\Users\smalisetty\OneDrive - Microsoft\Suchi\ARM\ARMPipeline\create_storage_account\azuredeploy.json"
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile create_storage_account/azuredeploy.json
 
 #print after deployment
 $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
