@@ -16,11 +16,8 @@
         }
     },
     "functions": [],
-    "variables": {
-        "uniqueStorageName": "[parameters('storageAccountName')]"
-    },
     "resources": [{
-        "name": "[variables('uniqueStorageName')]",
+        "name": "[parameters('storageAccountName')]",
         "type": "Microsoft.Storage/storageAccounts",
         "apiVersion": "2023-01-01",
         "tags": {
