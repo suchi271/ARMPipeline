@@ -9,6 +9,6 @@ steps:
   inputs:
     azureSubscription: 'ARMStorageAccountPipeline'
     ScriptType: 'FilePath'
-    ScriptPath: './Deploy-AzTemplate.ps1'
+    ScriptPath: 'create_storage_account\Deploy-AzTemplate.ps1'
     ScriptArguments: -Location 'centralindia' -ResourceGroupName 'ResourceDeployment' -TemplateFile create_storage_account\Deploy-AzTemplate.ps1
     azurePowerShellVersion: 'LatestVersion'
