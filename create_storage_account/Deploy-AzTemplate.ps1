@@ -1,4 +1,4 @@
-Connect-AzAccount
+# Connect-AzAccount
 
 # Define variables
 $resourceGroupName = "ResourceDeployment"
