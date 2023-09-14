@@ -8,7 +8,7 @@
                 "description": "Storage Account Name"
             },
             "minLength": 3,
-            "maxLength": 24
+            "maxLength": 100
         },
         "location": {
             "type": "string",
@@ -17,7 +17,7 @@
     },
     "functions": [],
     "variables": {
-        "uniqueStorageName": "[concat(parameters('storageAccountName'), uniqueString(resourceGroup().id))]"
+        "uniqueStorageName": "[parameters('storageAccountName')]"
     },
     "resources": [{
         "name": "[variables('uniqueStorageName')]",
